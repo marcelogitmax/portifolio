@@ -57,36 +57,42 @@
   ],
   "education": [
     {
-      "institution": "Instituição (Eng. Civil)",
-      "course": "Engenharia Civil",
-      "period": "Concluído"
-    },
-    {
       "institution": "Instituição (UNIP.)",
       "course": "Ciências da Computação",
       "period": "Cursando"
+    },
+    {
+
+      "institution": "Instituição (Eng. Civil)",
+      "course": "Engenharia Civil",
+      "period": "Concluído"
     }
   ],
   "professionalExperience": [
     {
       "name": "Web Developer / Website Manager",
-      "period": "2022 - até o momento",
+      "period": "2024 - até o momento",
       "description": "Website creation and structure setup, product and page design, full website management and maintence (WordPress)."
     },
     {
       "name": "Paid Traffic Manager",
-      "period": "2021 - 2022",
+      "period": " 2024 ",
       "description": "FSpecialist in managing paid media campaigns focused on performance, lead generation, and ROI across platforms like Google Ads and Meta.."
     },
     {
       "name": "Digital Planning / Paschoalotto",
-      "period": "2016 - 2021",
+      "period": "2023 - 2024",
       "description": "Experienced in digital campaign structuring, user journey mapping, and aligning marketing strategies with business goals."
     },
     {
       "name": "Civil Engineer / FRZ",
-      "period": "2016 - 2021",
+      "period": "2022 - 2023",
       "description": "Skilled in infrastructure planning, site supervision, and structural analysis, with a focus on efficient and safe project execution."
     }
+    {
+      "name": "Production Supervisor / Nutriquick - Irlanda ",
+      "period": "2020 - 2021",
+      "description": "Website creation and structure setup, product and page design, full website management and maintence (WordPress)."
+    },
   ]
 }
