@@ -1,15 +1,32 @@
 
-const acordeonTriggers = document.querySelectorAll('.acordeon .trigger')
+// Atualizado para funcionar com a nova estrutura de seções
+const sectionHeaders = document.querySelectorAll('.section-header');
 
-acordeonTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', (e) => {
-        const acordeon = trigger.parentElement
-        const isOpen = acordeon.classList.contains('open')
-
+sectionHeaders.forEach((header) => {
+    header.addEventListener('click', (e) => {
+        const section = header.parentElement;
+        const isOpen = section.classList.contains('open');
+        
+        // Fecha todas as outras seções (opcional - remova se quiser múltiplas abertas)
+        document.querySelectorAll('.section').forEach(s => {
+            if (s !== section) {
+                s.classList.remove('open');
+            }
+        });
+        
+        // Toggle da seção atual
         if (isOpen) {
-            acordeon.classList.remove('open')
+            section.classList.remove('open');
         } else {
-            acordeon.classList.add('open')
+            section.classList.add('open');
         }
-    })
-})
+    });
+});
+
+// Inicializar com a primeira seção aberta (opcional)
+document.addEventListener('DOMContentLoaded', () => {
+    const firstSection = document.querySelector('.section');
+    if (firstSection) {
+        firstSection.classList.add('open');
+    }
+});

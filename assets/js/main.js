@@ -22,13 +22,28 @@ function updateProfileInfo(profileData) {
 }
 
 function updateSoftSkills(profileData) {
+    console.log('Updating soft skills:', profileData.skills.softSkills); // Debug
     const softSkills = document.getElementById('profile.skills.softSkills')
-    softSkills.innerHTML = profileData.skills.softSkills.map(skill => `<li>${skill}</li>`).join('')
+    if (softSkills && profileData.skills && profileData.skills.softSkills) {
+        softSkills.innerHTML = profileData.skills.softSkills.map(skill => `<li class="soft-skill"><span>${skill}</span></li>`).join('')
+    } else {
+        console.error('Soft skills element or data not found');
+    }
 }
 
 function updateHardSkills(profileData) {
+    console.log('Updating hard skills:', profileData.skills.hardSkills); // Debug
     const hardSkills = document.getElementById('profile.skills.hardSkills')
-    hardSkills.innerHTML = profileData.skills.hardSkills.map(skill => `<li><img src="${skill.logo}" alt="${skill.name}" title="${skill.name}"></li>`).join('')
+    if (hardSkills && profileData.skills && profileData.skills.hardSkills) {
+        hardSkills.innerHTML = profileData.skills.hardSkills.map(skill => 
+            `<li class="skill-item">
+                <img src="${skill.logo}" alt="${skill.name}" title="${skill.name}" class="skill-icon">
+                <span class="skill-name">${skill.name}</span>
+            </li>`
+        ).join('')
+    } else {
+        console.error('Hard skills element or data not found');
+    }
 }
 
 function updateLanguages(profileData) {
@@ -76,12 +91,21 @@ function updateProfessionalExperience(profileData) {
 }
 
 (async () => {
-    const profileData = await fetchProfileData()
-    updateProfileInfo(profileData)
-    updateSoftSkills(profileData)
-    updateHardSkills(profileData)
-    updateLanguages(profileData)
-    updatePortfolio(profileData)
-    updateProfessionalExperience(profileData)
-    updateEducation(profileData)
+    try {
+        console.log('Loading profile data...'); // Debug
+        const profileData = await fetchProfileData()
+        console.log('Profile data received:', profileData); // Debug
+        
+        updateProfileInfo(profileData)
+        updateSoftSkills(profileData)
+        updateHardSkills(profileData)
+        updateLanguages(profileData)
+        updatePortfolio(profileData)
+        updateProfessionalExperience(profileData)
+        updateEducation(profileData)
+        
+        console.log('All updates completed'); // Debug
+    } catch (error) {
+        console.error('Error in main execution:', error);
+    }
 })()

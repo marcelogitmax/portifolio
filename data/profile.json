@@ -8,25 +8,28 @@
   "skills": {
     "hardSkills": [
       {
-        "name": "Nodejs",
-        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/nodejs.png"
+        "name": "JSON",
+        "logo": "data/imgs/js.png"
+      },
+      {
+        "name": "JavaScript",
+        "logo": "data/imgs/js.png"
       },
       {
         "name": "Java",
-        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/java.png"
+        "logo": "data/imgs/java.png"
       },
       {
         "name": "Angular",
-        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/angular.png"
+        "logo": "data/imgs/angular.png"
       },
       {
         "name": "React",
-        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/react.png"
+        "logo": "data/imgs/react.png"
       },
-      
       {
-        "name": "Postgresql",
-        "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/postgresql.png"
+        "name": "PostgreSQL",
+        "logo": "data/imgs/postgresql.png"
       }
     ],
     "softSkills": [
@@ -62,7 +65,6 @@
       "period": "Cursando"
     },
     {
-
       "institution": "Instituição (Eng. Civil)",
       "course": "Engenharia Civil",
       "period": "Concluído"

@@ -1,6 +1,99 @@
 async function fetchProfileData() {
-    const url = 'https://raw.githubusercontent.com/marcelogitmax/portifolio/master/data/profile.json';
-    const response = await fetch(url)
-    const profileData = await response.json()
-    return profileData
+    try {
+        const url = './data/profile.json';
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const profileData = await response.json();
+        console.log('Profile data loaded:', profileData); // Para debug
+        return profileData;
+    } catch (error) {
+        console.error('Error loading profile data:', error);
+        // Fallback com dados estáticos
+        return {
+            name: "Marcelo A A Silva",
+            photo: "assets/img/marcelo-perfil.jpg",
+            job: "Web Developer / Website Manager",
+            location: "Bauru - SP",
+            phone: "+55 1499803-5862",
+            email: "marceloaugusto.alves@hotmail.com",
+            skills: {
+                hardSkills: [
+                    { name: "JSON", logo: "data/imgs/js.png" },
+                    { name: "JavaScript", logo: "data/imgs/js.png" },
+                    { name: "Java", logo: "data/imgs/java.png" },
+                    { name: "Angular", logo: "data/imgs/angular.png" },
+                    { name: "React", logo: "data/imgs/react.png" },
+                    { name: "PostgreSQL", logo: "data/imgs/postgresql.png" }
+                ],
+                softSkills: [
+                    "Empatia",
+                    "Liderança",
+                    "Trabalho em equipe",
+                    "Flexibilidade",
+                    "Organização"
+                ]
+            },
+            languages: [
+                "Português BR",
+                "Inglês (intermediário)",
+                "Espanhol (intermediário)",
+                "Italiano (iniciante)"
+            ],
+            portfolio: [
+                {
+                    name: "Curso realizado na DIO para a criação de uma Pokedex",
+                    url: "https://github.com/marcelogitmax/Pokedex",
+                    github: true
+                },
+                {
+                    name: "Curso realizado na DIO para a criação de uma página de portfolio",
+                    url: "https://github.com/marcelogitmax/portifolio",
+                    github: true
+                }
+            ],
+            education: [
+                {
+                    institution: "Instituição (UNIP.)",
+                    course: "Ciências da Computação",
+                    period: "Cursando"
+                },
+                {
+                    institution: "Instituição (Eng. Civil)",
+                    course: "Engenharia Civil",
+                    period: "Concluído"
+                }
+            ],
+            professionalExperience: [
+                {
+                    name: "Web Developer / Website Manager",
+                    period: "2024 - até o momento",
+                    description: "Website creation and structure setup, product and page design, full website management and maintence (WordPress)."
+                },
+                {
+                    name: "Paid Traffic Manager",
+                    period: " 2024 ",
+                    description: "Specialist in managing paid media campaigns focused on performance, lead generation, and ROI across platforms like Google Ads and Meta."
+                },
+                {
+                    name: "Digital Planning / Paschoalotto",
+                    period: "2023 - 2024",
+                    description: "Experienced in digital campaign structuring, user journey mapping, and aligning marketing strategies with business goals."
+                },
+                {
+                    name: "Civil Engineer / FRZ",
+                    period: "2022 - 2023",
+                    description: "Skilled in infrastructure planning, site supervision, and structural analysis, with a focus on efficient and safe project execution."
+                },
+                {
+                    name: "Production Supervisor / Nutriquick - Irlanda ",
+                    period: "2020 - 2021",
+                    description: "Website creation and structure setup, product and page design, full website management and maintence (WordPress)."
+                }
+            ]
+        };
+    }
 }
