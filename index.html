@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/skills.css">
     <link rel="stylesheet" href="assets/css/portfolio.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/ai-avatar.css">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -180,5 +181,73 @@
     <script src="assets/js/api.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/acordeon.js"></script>
+    <script src="assets/js/ai-avatar.js"></script>
+
+    <!-- AI Avatar Assistant -->
+    <div class="ai-avatar-container" id="aiAvatar">
+        <div class="ai-avatar-button" id="avatarButton">
+            <div class="avatar-video-container">
+                <video class="avatar-video" autoplay muted loop playsinline>
+                    <source src="Avatar 1.mp4" type="video/mp4">
+                    <!-- Fallback icon if video fails to load -->
+                    <div class="avatar-icon-fallback">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L9 7V9C9 10.1 9.9 11 11 11V13C11 14.1 11.9 15 13 15H15C16.1 15 17 14.1 17 13V11C18.1 11 19 10.1 19 9ZM12 8C13.1 8 14 8.9 14 10S13.1 12 12 12S10 11.1 10 10S10.9 8 12 8Z"/>
+                        </svg>
+                    </div>
+                </video>
+            </div>
+            <div class="avatar-pulse"></div>
+            <div class="avatar-status online"></div>
+        </div>
+        
+        <!-- Presentation Speech Bubble -->
+        <div class="avatar-presentation" id="avatarPresentation">
+            <div class="presentation-content">
+                <p>👋 Olá! Sou o assistente virtual do Marcelo. Clique em mim para conversar!</p>
+            </div>
+            <div class="presentation-arrow"></div>
+        </div>
+        
+        <div class="ai-chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar">
+                    <video class="chat-avatar-video" autoplay muted loop playsinline>
+                        <source src="Avatar 1.mp4" type="video/mp4">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                        </svg>
+                    </video>
+                </div>
+                <div class="chat-info">
+                    <h4>Assistente IA - Marcelo</h4>
+                    <span class="status-text">Online</span>
+                </div>
+                <button class="chat-close" id="chatClose">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ai-message">
+                    <div class="message-content">
+                        Olá! 👋 Sou o assistente virtual do Marcelo. Estou aqui para ajudar você a conhecer melhor o trabalho e as habilidades dele. Como posso ajudá-lo hoje?
+                    </div>
+                    <div class="message-time">Agora</div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem...">
+                <button class="send-button" id="sendButton">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
