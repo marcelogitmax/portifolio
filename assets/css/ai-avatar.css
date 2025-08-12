@@ -22,12 +22,7 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     border: 3px solid rgba(255, 255, 255, 0.2);
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.ai-avatar-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.3);
+    /* Removidas todas as transições e animações */
 }
 
 /* Container do vídeo do avatar */
@@ -76,8 +71,11 @@
     max-width: 250px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    transform: translateY(10px);
-    animation: fadeInUp 0.3s ease forwards;
+    /* Removida a animação automática */
+}
+
+.avatar-presentation.show {
+    opacity: 1;
 }
 
 .avatar-presentation::after {
@@ -164,11 +162,6 @@
     cursor: pointer;
     padding: 4px;
     border-radius: 4px;
-    transition: background-color 0.2s ease;
-}
-
-.chat-close:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .chat-close svg {
@@ -247,15 +240,7 @@
     height: 6px;
     background: #999;
     border-radius: 50%;
-    animation: typing 1.4s infinite;
-}
-
-.typing-dot:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.typing-dot:nth-child(3) {
-    animation-delay: 0.4s;
+    /* Removida a animação de digitação automática */
 }
 
 /* Área de input */
@@ -275,7 +260,6 @@
     padding: 10px 16px;
     font-size: 14px;
     outline: none;
-    transition: border-color 0.2s ease;
 }
 
 .chat-input:focus {
@@ -293,59 +277,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease;
-}
-
-.send-button:hover {
-    transform: scale(1.05);
 }
 
 .send-button svg {
     width: 18px;
     height: 18px;
-}
-
-/* Animações */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes typing {
-    0%, 60%, 100% {
-        transform: translateY(0);
-    }
-    30% {
-        transform: translateY(-10px);
-    }
 }
 
 /* Responsividade */
@@ -358,12 +294,6 @@
     .ai-avatar-button {
         width: 70px;
         height: 70px;
-        transform: none;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-    
-    .ai-avatar-button:hover {
-        transform: none;
     }
     
     .avatar-presentation {
